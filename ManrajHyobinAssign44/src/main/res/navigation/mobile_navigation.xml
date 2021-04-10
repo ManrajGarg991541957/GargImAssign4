@@ -7,19 +7,28 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="manraj.hyobin.gargim.ui.home.HomeFragment"
+        android:name="manraj.hyobin.gargim.ui.home.HomeFrag"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="manraj.hyobin.gargim.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="manraj.hyobin.gargim.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_download"
+        android:name="manraj.hyobin.gargim.ui.home.DownloadFrag"
+        android:label="Download"
+        tools:layout="@layout/fragment_download" />
+
+    <fragment
+        android:id="@+id/nav_webservice"
+        android:name="manraj.hyobin.gargim.ui.home.WebServiceFrag"
+        android:label="Web Service"
+        tools:layout="@layout/fragment_web_service" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="manraj.hyobin.gargim.ui.home.SettingsFrag"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+
 </navigation>
