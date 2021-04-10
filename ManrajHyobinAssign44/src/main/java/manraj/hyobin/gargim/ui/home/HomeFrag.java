@@ -1,9 +1,5 @@
 package manraj.hyobin.gargim.ui.home;
 
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -62,10 +58,5 @@ public class HomeFrag extends Fragment {
                 someHandler.postDelayed(this, 1000);
             }
         }, 10);
-
-        Paint circlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        RadialGradient radGrad = new RadialGradient(0, 0, 25, 25, Color.RED, Color.BLUE, Shader.TileMode.MIRROR);
-        circlePaint.setShader(radGrad);
-        canvas.drawCircle(100, 100, 100, circlePaint);
     }
 }
