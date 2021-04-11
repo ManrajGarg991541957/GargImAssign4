@@ -1,6 +1,7 @@
 package manraj.hyobin.gargim.ui.home;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -98,8 +99,18 @@ public class WebServiceFrag extends Fragment {
         String url = "https://api.openweathermap.org/data/2.5/weather?";
         if (etZip.getText().length() == 0){
             etZip.setError("Zip cannot be empty");
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle("Alert!");
+            builder.setMessage("Zip cannot be empty");
+            builder.setIcon(android.R.drawable.ic_dialog_alert);
+            builder.show();
         } else if (etZip.getText().length() > 0 && etZip.getText().length() < 5) {
             etZip.setError("Zip too short");
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle("Alert!");
+            builder.setMessage("Zip code needs to be 5 digits");
+            builder.setIcon(android.R.drawable.ic_dialog_alert);
+            builder.show();
         } else {
             url += "zip=" + etZip.getText().toString();
             url += ",us&appid=23f04464b7119837cf1dc4fa8b39caa3"; //from OpenWeatherMap website
@@ -175,6 +186,11 @@ public class WebServiceFrag extends Fragment {
             } catch (Exception e) {
                 if (e.toString().contains("org.json.JSONException: End of input at character 0 of")){
                     etZip.setError("That zip could not be found");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("Error!");
+                    builder.setMessage("Zip could not be found");
+                    builder.setIcon(getResources().getDrawable(R.drawable.ic_error));
+                    builder.show();
                 } else {
                     etZip.setError(e.toString());
                 }

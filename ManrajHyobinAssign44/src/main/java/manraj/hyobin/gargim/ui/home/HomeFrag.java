@@ -1,5 +1,7 @@
 package manraj.hyobin.gargim.ui.home;
 
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -20,6 +22,7 @@ import java.util.Locale;
 
 import manraj.hyobin.gargim.R;
 
+import static android.content.Context.MODE_PRIVATE;
 import static android.os.Looper.getMainLooper;
 
 public class HomeFrag extends Fragment {
@@ -28,7 +31,8 @@ public class HomeFrag extends Fragment {
     private TextView timeDisplay;
     private Calendar calendar;
     private SimpleDateFormat dateFormat;
-    private String date;
+    private String date, color;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -58,5 +62,18 @@ public class HomeFrag extends Fragment {
                 someHandler.postDelayed(this, 1000);
             }
         }, 10);
+
+        SharedPreferences settings = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
+        color = settings.getString("COLOR", "");
+
+        if (color.equals("Blue")){
+            view.getRootView().setBackgroundColor(Color.BLUE);
+        }
+        if (color.equals("Brown")){
+            view.getRootView().setBackgroundColor(Color.parseColor("#A52A2A"));
+        }
+        if (color.equals("Purple")){
+            view.getRootView().setBackgroundColor(Color.parseColor("#800080"));
+        }
     }
 }

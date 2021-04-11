@@ -1,14 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.SettingsFrag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <RadioGroup
+        android:id="@+id/manrajHyobin_rg_color"
+        android:layout_width="112dp"
+        android:layout_height="154dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.188">
 
-</FrameLayout>
+        <RadioButton
+            android:id="@+id/manrajHyobin_bg_brown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brown" />
+
+        <RadioButton
+            android:id="@+id/manrajHyobin_bg_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue" />
+
+        <RadioButton
+            android:id="@+id/manrajHyobin_bg_purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Purple" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/manrajHyobin_hp_bg_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home page background color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <RadioGroup
+        android:id="@+id/manrajHyobin_rg_clockFormat"
+        android:layout_width="89dp"
+        android:layout_height="107dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54">
+
+        <RadioButton
+            android:id="@+id/manrajHyobin_format_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12hr" />
+
+        <RadioButton
+            android:id="@+id/manrajHyobin_format_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="24hr" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/manrajHyobin_clockFormatTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clock format"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431" />
+
+    <Switch
+        android:id="@+id/manrajHyobin_portrait_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Portrait"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.704" />
+
+    <Button
+        android:id="@+id/manrajHyobin_savePrefs_button"
+        android:layout_width="185dp"
+        android:layout_height="54dp"
+        android:text="Save Changes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
