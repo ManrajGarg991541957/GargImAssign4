@@ -33,6 +33,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 import manraj.hyobin.gargim.R;
 
@@ -95,14 +96,20 @@ public class WebServiceFrag extends Fragment {
         //"http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=13f04464b7119837cf1dc4fa8b39caa3");
 
         String url = "https://api.openweathermap.org/data/2.5/weather?";
-        url+="zip="+ etZip.getText().toString();
-        url+=",us&appid=23f04464b7119837cf1dc4fa8b39caa3"; //from OpenWeatherMap website
-        Log.d("URL",url);
-        new ReadJSONFeedTask().execute(url);
-        //new ReadJSONFeedTask().execute(
-        //        "https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=13f04464b7119837cf1dc4fa8b39caa3");
-
+        if (etZip.getText().length() == 0){
+            etZip.setError("Zip cannot be empty");
+        } else if (etZip.getText().length() > 0 && etZip.getText().length() < 5) {
+            etZip.setError("Zip too short");
+        } else {
+            url += "zip=" + etZip.getText().toString();
+            url += ",us&appid=23f04464b7119837cf1dc4fa8b39caa3"; //from OpenWeatherMap website
+            Log.d("URL", url);
+            new ReadJSONFeedTask().execute(url);
+            //new ReadJSONFeedTask().execute(
+            //        "https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=13f04464b7119837cf1dc4fa8b39caa3");
+        }
     }
+
 
 
     public String readJSONFeed(String address) {
@@ -142,39 +149,35 @@ public class WebServiceFrag extends Fragment {
 
         protected void onPostExecute(String result) {
             try {
-                //JSONArray jsonArray = new JSONArray(result);
-                //Uncomment the two rows below to parse weather data from OpenWeatherMap
                 JSONObject weatherJson = new JSONObject(result);
+                DecimalFormat df = new DecimalFormat("0.00");
                 JSONObject dataObject = weatherJson.getJSONObject("main");
-                tvTemp.setText("temp: " + dataObject.getString("temp"));
+                double tempC, tempDouble;
+                String temp;
+                temp = dataObject.getString("temp");
+                tempDouble = Double.parseDouble(temp);
+                tempC = tempDouble - 273.15;
+
+
+                tvTemp.setText("temp: " + df.format(tempC) + "C");
+                //tvTemp.setText("temp: " + dataObject.getString("temp"));
                 tvHumidity.setText("humidity: " + dataObject.getString("humidity"));
 
                 JSONObject coordObject = weatherJson.getJSONObject("coord");
                 tvLat.setText("Lat: " + coordObject.getString("lat"));
                 tvLong.setText("Long: " + coordObject.getString("lon"));
 
-                tvZip.setText("Zipcode: " + etZip.getText().toString());
+                tvZip.setText("Zip Code: " + etZip.getText().toString());
                 tvName.setText("Name: " + weatherJson.getString("name"));
-                //
 
-                //txtDisplayWeather.setText(weatherJson.getString("weather"));
-                //
-                //uncomment the code below for parsing survey data
-                /*
-                JSONArray jsonArray = new JSONArray(result);
-                Log.i("JSON", "Number of surveys in feed: " + jsonArray.length());
-                //---print out the content of the json feed---
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    Log.d("survey",jsonObject.getString("surveyDate"));
-                    Toast.makeText(getBaseContext(),
-                            jsonObject.getString("surveyTime") +
-                                    " - " + jsonObject.getString("appeId"),
-                            Toast.LENGTH_SHORT).show();
-                }
-                */
+
+
             } catch (Exception e) {
-                e.printStackTrace();
+                if (e.toString().contains("org.json.JSONException: End of input at character 0 of")){
+                    etZip.setError("That zip could not be found");
+                } else {
+                    etZip.setError(e.toString());
+                }
             }
         }
     }
