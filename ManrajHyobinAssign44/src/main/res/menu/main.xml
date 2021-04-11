@@ -6,4 +6,19 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/manrajHyobinLocation"
+        android:title="Location"
+        android:icon="@drawable/ic_menu_camera"
+        app:showAsAction="always"
+        android:orderInCategory="1">
+    </item>
+    <item
+        android:id="@+id/manrajHyobinSMS"
+        android:title="Send SMS"
+        android:icon="@drawable/ic_menu_gallery"
+        app:showAsAction="always"
+        android:orderInCategory="2">
+    </item>
 </menu>

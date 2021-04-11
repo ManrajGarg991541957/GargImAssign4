@@ -1,8 +1,12 @@
 package manraj.hyobin.gargim;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
@@ -73,11 +77,6 @@ public class ManrajHyobinActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-/*    public void loadFragment(Fragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.home_fragment, fragment);
-        transaction.commit();
-    }*/
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
@@ -112,5 +111,21 @@ public class ManrajHyobinActivity extends AppCompatActivity {
             return;
         }
         // LocationServices.getFusedLocationProviderClient(this.getActivity()).requestLocationUpdates(locationRequest, new LocationCallBack(){})
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        Intent intent = null;
+        switch (item.getItemId()) {
+            case R.id.manrajHyobinLocation:
+
+                break;
+            case R.id.manrajHyobinSMS:
+
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }
