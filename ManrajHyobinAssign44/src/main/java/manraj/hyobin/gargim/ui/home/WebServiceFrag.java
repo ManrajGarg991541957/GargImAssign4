@@ -78,9 +78,6 @@ public class WebServiceFrag extends Fragment {
                 getWeather();
             }
         });
-
-
-
         return view;
     }
 
@@ -136,6 +133,7 @@ public class WebServiceFrag extends Fragment {
         }
         return stringBuilder.toString();
     }
+
     private class ReadJSONFeedTask extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... urls) {
             return readJSONFeed(urls[0]);
@@ -143,24 +141,13 @@ public class WebServiceFrag extends Fragment {
 
         protected void onPostExecute(String result) {
             try {
-                //JSONArray jsonArray = new JSONArray(result);
-                //Uncomment the two rows below to parse weather data from OpenWeatherMap
-                JSONObject weatherJson = new JSONObject(result);
-                JSONArray dataArray1 = weatherJson.getJSONArray("weather");
-                String strResults = "Weather\n";
-                for (int i = 0; i < dataArray1.length(); i++) {
-                    JSONObject jsonObject = dataArray1.getJSONObject(i);
-                    strResults += "id: " + jsonObject.getString("id");
-                    strResults += "\nmain: " + jsonObject.getString("main");
-                    strResults += "\ndescription: " + jsonObject.getString("description");
-                }
-                //
+
+                 JSONObject weatherJson = new JSONObject(result);
+
                 JSONObject dataObject = weatherJson.getJSONObject("main");
                 tvTemp.setText("temp: " + dataObject.getString("temp"));
                 tvHumidity.setText("humidity: " + dataObject.getString("humidity"));
-                strResults += "\ntemp_min: " + dataObject.getString("temp_min");
-                strResults += "\ntemp_max: " + dataObject.getString("temp_max");
-                //
+
 
                 //txtDisplayWeather.setText(weatherJson.getString("weather"));
                 //
