@@ -24,6 +24,7 @@
         android:id="@+id/manrajHyobinTemp"
         android:layout_width="159dp"
         android:layout_height="31dp"
+        android:text="hello"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
