@@ -102,7 +102,6 @@ public class WebServiceFrag extends Fragment {
         //new ReadJSONFeedTask().execute(
         //        "https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=13f04464b7119837cf1dc4fa8b39caa3");
 
-
     }
 
 
@@ -146,20 +145,16 @@ public class WebServiceFrag extends Fragment {
                 //JSONArray jsonArray = new JSONArray(result);
                 //Uncomment the two rows below to parse weather data from OpenWeatherMap
                 JSONObject weatherJson = new JSONObject(result);
-                JSONArray dataArray1 = weatherJson.getJSONArray("weather");
-                String strResults = "Weather\n";
-                for (int i = 0; i < dataArray1.length(); i++) {
-                    JSONObject jsonObject = dataArray1.getJSONObject(i);
-                    strResults += "id: " + jsonObject.getString("id");
-                    strResults += "\nmain: " + jsonObject.getString("main");
-                    strResults += "\ndescription: " + jsonObject.getString("description");
-                }
-                //
                 JSONObject dataObject = weatherJson.getJSONObject("main");
                 tvTemp.setText("temp: " + dataObject.getString("temp"));
                 tvHumidity.setText("humidity: " + dataObject.getString("humidity"));
-                strResults += "\ntemp_min: " + dataObject.getString("temp_min");
-                strResults += "\ntemp_max: " + dataObject.getString("temp_max");
+
+                JSONObject coordObject = weatherJson.getJSONObject("coord");
+                tvLat.setText("Lat: " + coordObject.getString("lat"));
+                tvLong.setText("Long: " + coordObject.getString("lon"));
+
+                tvZip.setText("Zipcode: " + etZip.getText().toString());
+                tvName.setText("Name: " + weatherJson.getString("name"));
                 //
 
                 //txtDisplayWeather.setText(weatherJson.getString("weather"));
