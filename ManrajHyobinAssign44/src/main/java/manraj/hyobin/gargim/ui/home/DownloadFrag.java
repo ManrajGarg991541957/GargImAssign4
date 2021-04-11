@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -84,7 +85,19 @@ public class DownloadFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 AsyncTaskExample asyncTask=new AsyncTaskExample();
-                asyncTask.execute("https://www.tutorialspoint.com/images/tp-logo-diamond.png");
+                TextView spinnerText = root.findViewById(R.id.gargImTvName);
+                if(spinnerText.getText().toString().equals("Bucks"))
+                {
+                    asyncTask.execute("https://toppng.com/uploads/preview/milwaukee-bucks-football-logo-png-11536012031kbxllbpway.png");
+                }
+                else if (spinnerText.getText().toString().equals("Raptors"))
+                {
+                    asyncTask.execute("https://www.vhv.rs/dpng/d/147-1475850_toronto-raptors-logo-claw-toronto-raptors-logo-png.png");
+                }
+                else if (spinnerText.getText().toString().equals("Lakers"))
+                {
+                    asyncTask.execute("https://toppng.com/uploads/preview/lakers-logo-png-los-angeles-lakers-11562884650hddhrc18oe.png");
+                }
             }
         });
 
@@ -104,8 +117,11 @@ public class DownloadFrag extends Fragment {
 
         @Override
         protected void onPreExecute() {
+            TextView spinnerText = root.findViewById(R.id.gargImTvName);
+            String teamText = spinnerText.getText().toString();
             super.onPreExecute();
             p=new ProgressDialog(getContext());
+            p.setTitle("Downloading " + teamText);
             p.setMessage("Please wait...It is downloading");
             p.setIndeterminate(false);
             p.setCancelable(false);
