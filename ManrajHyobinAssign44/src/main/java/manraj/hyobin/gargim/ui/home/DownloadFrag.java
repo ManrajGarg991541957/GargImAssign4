@@ -46,8 +46,8 @@ public class DownloadFrag extends Fragment {
         root = inflater.inflate(R.layout.fragment_download, container, false);
 
         Spinner spinnerTeams = root.findViewById(R.id.gargImSpinner);
-
-        mAdapter = new SpinnerAdapter(this.getActivity(), mSpinnerList);
+        initList();
+        mAdapter = new SpinnerAdapter(this.getContext(), mSpinnerList);
         spinnerTeams.setAdapter(mAdapter);
 
         spinnerTeams.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

@@ -8,6 +8,61 @@
     android:background="@color/pink">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/manrajHyobinName"
+        android:layout_width="159dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.747" />
+
+    <TextView
+        android:id="@+id/manrajHyobinTemp"
+        android:layout_width="159dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
+
+    <TextView
+        android:id="@+id/manrajHyobinHumidity"
+        android:layout_width="159dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
+
+    <TextView
+        android:id="@+id/manrajHyobinLat"
+        android:layout_width="159dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/manrajHyobinZipcode"
+        android:layout_width="159dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.747" />
+
     <TextView
         android:id="@+id/manrajHyobinTV"
         android:layout_width="286dp"
@@ -21,24 +76,41 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.074" />
 
     <EditText
         android:id="@+id/manrajHyobinZip"
         android:layout_width="229dp"
         android:layout_height="44dp"
-        android:maxLength="5"
-        android:inputType="number"
         android:hint="Enter Zip Code"
+        android:inputType="number"
+        android:maxLength="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:id="@+id/manrajHyobinWebServiceBtn"
+        android:layout_width="389dp"
+        android:layout_height="68dp"
+        android:text="Web Services"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <TextView
+        android:id="@+id/manrajHyobinLong"
+        android:layout_width="159dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
