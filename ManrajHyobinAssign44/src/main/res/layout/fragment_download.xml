@@ -9,8 +9,8 @@
 
     <Spinner
         android:id="@+id/gargImSpinner"
-        android:layout_width="258dp"
-        android:layout_height="86dp"
+        android:layout_width="367dp"
+        android:layout_height="73dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
