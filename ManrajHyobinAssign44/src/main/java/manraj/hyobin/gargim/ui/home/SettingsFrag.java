@@ -32,6 +32,7 @@ public class SettingsFrag extends Fragment {
     Button button;
     RadioGroup color, clockFormat;
     boolean b_portrait;
+
     public SettingsFrag() {
         // Required empty public constructor
     }
@@ -53,7 +54,7 @@ public class SettingsFrag extends Fragment {
         clockFormat = (RadioGroup)view.findViewById(R.id.manrajHyobin_rg_clockFormat);
 
         settings = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
-        b_portrait = settings.getBoolean("PORTRAIT", true);
+        b_portrait = settings.getBoolean("PORTRAIT", false);
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -63,19 +64,27 @@ public class SettingsFrag extends Fragment {
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if (isChecked){
                             b_portrait = true;
-                            saveSettingsPortrait("PORTRAIT", b_portrait);
                         } else {
                             b_portrait = false;
-                            saveSettingsPortrait("PORTRAIT", b_portrait);
                         }
+                        saveSettingsPortrait("PORTRAIT", b_portrait);
                     }
                 });
                 int selectedColorId = color.getCheckedRadioButtonId();
-                selectedColor = view.findViewById(selectedColorId);
-                saveSettingsColor("COLOR", selectedColor.getText().toString());
+                if (selectedColorId == -1){
+                    //do nothing if nothing is selected for colors
+                } else {
+                    selectedColor = view.findViewById(selectedColorId);
+                    saveSettingsColor("COLOR", selectedColor.getText().toString());
+                }
                 int selectedFormatId = clockFormat.getCheckedRadioButtonId();
-                selectedFormat = view.findViewById(selectedFormatId);
-                saveSettingsClock("FORMAT", selectedFormat.getText().toString());
+
+                if (selectedFormatId == -1){
+                    //do nothing if nothing is selected for clock format
+                } else {
+                    selectedFormat = view.findViewById(selectedFormatId);
+                    saveSettingsClock("FORMAT", selectedFormat.getText().toString());
+                }
             }
         });
 
@@ -99,7 +108,7 @@ public class SettingsFrag extends Fragment {
 
     public void saveSettingsPortrait(String s, boolean b){
         SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean(s,b);
+        editor.putBoolean(s, b);
         editor.apply();
     }
 }

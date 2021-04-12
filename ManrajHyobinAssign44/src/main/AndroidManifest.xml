@@ -18,7 +18,8 @@
         <activity
             android:name=".ManrajHyobinActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ManrajHyobinAssign4.NoActionBar">
+            android:theme="@style/Theme.ManrajHyobinAssign4.NoActionBar"
+            android:configChanges="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
