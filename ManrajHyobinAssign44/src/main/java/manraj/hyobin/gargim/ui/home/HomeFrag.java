@@ -1,12 +1,14 @@
 package manraj.hyobin.gargim.ui.home;
 
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,6 +35,8 @@ public class HomeFrag extends Fragment {
     private SimpleDateFormat dateFormat;
     private String date, color, clockFormat;
 
+    boolean b_portrait;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -50,6 +54,7 @@ public class HomeFrag extends Fragment {
         SharedPreferences settings = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         color = settings.getString("COLOR", "");
         clockFormat = settings.getString( "FORMAT", "");
+        b_portrait = settings.getBoolean("PORTRAIT", false);
 
         if (color.equals("Blue")) {
             view.getRootView().setBackgroundColor(Color.BLUE);
@@ -89,6 +94,12 @@ public class HomeFrag extends Fragment {
                 }
             }, 10);
         }
+
+//        if (b_portrait == true){
+//            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//        } else {
+//            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_BEHIND);
+//        }
 
         return view;
     }
