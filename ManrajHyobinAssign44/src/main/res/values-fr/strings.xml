@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">GargIm</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le panneau de navigation</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="nav_header_desc">En-tête de navigation</string>
+    <string name="action_settings">Paramètres</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Domicile</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="title">\"Downloading \"</string>
-    <string name="message">Please wait...It is downloading</string>
+    <string name="title">\"Téléchargement \"</string>
+    <string name="message">Veuillez patienter ... Il est en cours de téléchargement</string>
     <string name="bucksUrl">https://toppng.com/uploads/preview/milwaukee-bucks-football-logo-png-11536012031kbxllbpway.png</string>
     <string name="raptorsUrl">https://www.vhv.rs/dpng/d/147-1475850_toronto-raptors-logo-claw-toronto-raptors-logo-png.png</string>
     <string name="lakersUrl">https://toppng.com/uploads/preview/lakers-logo-png-los-angeles-lakers-11562884650hddhrc18oe.png</string>
@@ -26,31 +26,27 @@
     <string name="time">hh:mm:ss</string>
     <string name="bigTime">HH:mm:ss</string>
     <string name="dateFormat">MM/dd/yyyy</string>
-    <string name="zipError">That zip could not be found</string>
-    <string name="ziperror">Zip could not be found</string>
-    <string name="error">Error!</string>
-    <string name="blue">Blue</string>
-    <string name="brown2">Brown</string>
-    <string name="dayHours">24hr</string>
-    <string name="halfDay">12hr</string>
+    <string name="zipError">Ce zip n\'a pas pu être trouvé</string>
+    <string name="ziperror">Le code postal est introuvable</string>
+    <string name="error">Erreur!</string>
     <string name="weatherUrl">https://api.openweathermap.org/data/2.5/weather?</string>
-    <string name="shortZip">Zip too short</string>
-    <string name="alert">Alert!</string>
-    <string name="zipDigitsError">Zip code needs to be 5 digits</string>
+    <string name="shortZip">Code postal trop court</string>
+    <string name="alert">Alerte!</string>
+    <string name="zipDigitsError">Le code postal doit être composé de 5 chiffres</string>
     <string name="zipConstructor">zip=</string>
     <string name="urlConstructor"><![CDATA[,us&appid=23f04464b7119837cf1dc4fa8b39caa3]]></string>
-    <string name="main">main</string>
+    <string name="main">principal</string>
     <string name="temp">\"temp: \"</string>
-    <string name="humidity">\"humidity: \"</string>
+    <string name="humidity">\"humidité: \"</string>
     <string name="lat">\"Lat: \"</string>
     <string name="coord">coord</string>
-    <string name="zipCode">\"Zip Code: \"</string>
+    <string name="zipCode">\"Code postal: \"</string>
     <string name="longCoord">\"Long: \"</string>
-    <string name="name">\"Name: \"</string>
+    <string name="name">\"Nom: \"</string>
     <string name="jsonException">org.json.JSONException: End of input at character 0 of</string>
     <string name="googleUrl">https://www.google.ca</string>
-    <string name="sms_sent">SMS_SENT</string>
-    <string name="sms_del">SMS_DELIVERED</string>
+    <string name="sms_sent">SMS_ENVOYÉ</string>
+    <string name="sms_del">SMS_LIVRÉ</string>
 
 
 </resources>
