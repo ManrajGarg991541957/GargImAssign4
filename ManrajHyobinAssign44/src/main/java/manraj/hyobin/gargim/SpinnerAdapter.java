@@ -1,3 +1,8 @@
+/*
+        Manraj Garg s991541957
+        Hyobin Im s991526068
+        This is assignment 4 completed via pair programming - displays the use of multiple fragments in a nav drawer */
+
 package manraj.hyobin.gargim;
 
 import android.content.Context;

@@ -1,3 +1,8 @@
+/*
+        Manraj Garg s991541957
+        Hyobin Im s991526068
+        This is assignment 4 completed via pair programming - displays the use of multiple fragments in a nav drawer */
+
 package manraj.hyobin.gargim.ui.home;
 
 import android.Manifest;
@@ -96,24 +101,24 @@ public class WebServiceFrag extends Fragment {
         //create the URL to call JSON service
         //"http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=13f04464b7119837cf1dc4fa8b39caa3");
 
-        String url = "https://api.openweathermap.org/data/2.5/weather?";
+        String url = getString(R.string.weatherUrl);
         if (etZip.getText().length() == 0){
-            etZip.setError("Zip cannot be empty");
+            etZip.setError(getString(R.string.zipError));
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setTitle("Alert!");
-            builder.setMessage("Zip cannot be empty");
+            builder.setTitle(R.string.alert);
+            builder.setMessage(getString(R.string.zipError));
             builder.setIcon(android.R.drawable.ic_dialog_alert);
             builder.show();
         } else if (etZip.getText().length() > 0 && etZip.getText().length() < 5) {
-            etZip.setError("Zip too short");
+            etZip.setError(getString(R.string.shortZip));
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setTitle("Alert!");
-            builder.setMessage("Zip code needs to be 5 digits");
+            builder.setTitle(R.string.alert);
+            builder.setMessage(R.string.zipDigitsError);
             builder.setIcon(android.R.drawable.ic_dialog_alert);
             builder.show();
         } else {
-            url += "zip=" + etZip.getText().toString();
-            url += ",us&appid=23f04464b7119837cf1dc4fa8b39caa3"; //from OpenWeatherMap website
+            url += getString(R.string.zipConstructor) + etZip.getText().toString();
+            url += getString(R.string.urlConstructor); //from OpenWeatherMap website
             Log.d("URL", url);
             new ReadJSONFeedTask().execute(url);
             //new ReadJSONFeedTask().execute(
@@ -162,7 +167,7 @@ public class WebServiceFrag extends Fragment {
             try {
                 JSONObject weatherJson = new JSONObject(result);
                 DecimalFormat df = new DecimalFormat("0.00");
-                JSONObject dataObject = weatherJson.getJSONObject("main");
+                JSONObject dataObject = weatherJson.getJSONObject(getString(R.string.main));
                 double tempC, tempDouble;
                 String temp;
                 temp = dataObject.getString("temp");
@@ -170,25 +175,25 @@ public class WebServiceFrag extends Fragment {
                 tempC = tempDouble - 273.15;
 
 
-                tvTemp.setText("temp: " + df.format(tempC) + "C");
+                tvTemp.setText(getString(R.string.temp) + df.format(tempC) + "C");
                 //tvTemp.setText("temp: " + dataObject.getString("temp"));
-                tvHumidity.setText("humidity: " + dataObject.getString("humidity"));
+                tvHumidity.setText(getString(R.string.humidity) + dataObject.getString("humidity"));
 
-                JSONObject coordObject = weatherJson.getJSONObject("coord");
-                tvLat.setText("Lat: " + coordObject.getString("lat"));
-                tvLong.setText("Long: " + coordObject.getString("lon"));
+                JSONObject coordObject = weatherJson.getJSONObject(getString(R.string.coord));
+                tvLat.setText(getString(R.string.lat) + coordObject.getString("lat"));
+                tvLong.setText(getString(R.string.longCoord) + coordObject.getString("lon"));
 
-                tvZip.setText("Zip Code: " + etZip.getText().toString());
-                tvName.setText("Name: " + weatherJson.getString("name"));
+                tvZip.setText(getString(R.string.zipCode) + etZip.getText().toString());
+                tvName.setText(getString(R.string.name) + weatherJson.getString("name"));
 
 
 
             } catch (Exception e) {
-                if (e.toString().contains("org.json.JSONException: End of input at character 0 of")){
-                    etZip.setError("That zip could not be found");
+                if (e.toString().contains(getString(R.string.jsonException))){
+                    etZip.setError(getString(R.string.zipError));
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                    builder.setTitle("Error!");
-                    builder.setMessage("Zip could not be found");
+                    builder.setTitle(R.string.error);
+                    builder.setMessage(R.string.ziperror);
                     builder.setIcon(getResources().getDrawable(R.drawable.ic_error));
                     builder.show();
                 } else {

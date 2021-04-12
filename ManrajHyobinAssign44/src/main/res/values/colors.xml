@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Manraj Garg s991541957
+Hyobin Im s991526068
+This is assignment 4 completed via pair programming - displays the use of multiple fragments in a nav drawer
+ -->
 <resources>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

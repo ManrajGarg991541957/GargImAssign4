@@ -10,6 +10,48 @@
     <string name="menu_home">Home</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">\"Downloading \"</string>
+    <string name="message">Please wait...It is downloading</string>
+    <string name="bucksUrl">https://toppng.com/uploads/preview/milwaukee-bucks-football-logo-png-11536012031kbxllbpway.png</string>
+    <string name="raptorsUrl">https://www.vhv.rs/dpng/d/147-1475850_toronto-raptors-logo-claw-toronto-raptors-logo-png.png</string>
+    <string name="lakersUrl">https://toppng.com/uploads/preview/lakers-logo-png-los-angeles-lakers-11562884650hddhrc18oe.png</string>
+    <string name="buck">Bucks</string>
+    <string name="rap">Raptors</string>
+    <string name="lake">Lakers</string>
+    <string name="raps">Raptors</string>
+    <string name="bucs">Bucks</string>
+    <string name="la">Lakers</string>
+    <string name="purple">#800080</string>
+    <string name="brown">#A52A2A</string>
+    <string name="purple2">Purple</string>
+    <string name="time">hh:mm:ss</string>
+    <string name="bigTime">HH:mm:ss</string>
+    <string name="dateFormat">MM/dd/yyyy</string>
+    <string name="zipError">That zip could not be found</string>
+    <string name="ziperror">Zip could not be found</string>
+    <string name="error">Error!</string>
+    <string name="blue">Blue</string>
+    <string name="brown2">Brown</string>
+    <string name="dayHours">24hr</string>
+    <string name="halfDay">12hr</string>
+    <string name="weatherUrl">https://api.openweathermap.org/data/2.5/weather?</string>
+    <string name="shortZip">Zip too short</string>
+    <string name="alert">Alert!</string>
+    <string name="zipDigitsError">Zip code needs to be 5 digits</string>
+    <string name="zipConstructor">zip=</string>
+    <string name="urlConstructor"><![CDATA[,us&appid=23f04464b7119837cf1dc4fa8b39caa3]]></string>
+    <string name="main">main</string>
+    <string name="temp">\"temp: \"</string>
+    <string name="humidity">\"humidity: \"</string>
+    <string name="lat">\"Lat: \"</string>
+    <string name="coord">coord</string>
+    <string name="zipCode">\"Zip Code: \"</string>
+    <string name="longCoord">\"Long: \"</string>
+    <string name="name">\"Name: \"</string>
+    <string name="jsonException">org.json.JSONException: End of input at character 0 of</string>
+    <string name="googleUrl">https://www.google.ca</string>
+    <string name="sms_sent">SMS_SENT</string>
+    <string name="sms_del">SMS_DELIVERED</string>
 
 
 </resources>

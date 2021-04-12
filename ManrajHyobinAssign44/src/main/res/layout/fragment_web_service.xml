@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Manraj Garg s991541957
+Hyobin Im s991526068
+This is assignment 4 completed via pair programming - displays the use of multiple fragments in a nav drawer
+ -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -24,7 +29,6 @@
         android:id="@+id/manrajHyobinTemp"
         android:layout_width="159dp"
         android:layout_height="31dp"
-        android:text="hello"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"

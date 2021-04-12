@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Manraj Garg s991541957
+Hyobin Im s991526068
+This is assignment 4 completed via pair programming - displays the use of multiple fragments in a nav drawer
+ -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
 
     <item
         android:id="@+id/manrajHyobinLocation"
@@ -20,5 +20,11 @@
         android:icon="@drawable/ic_sms"
         app:showAsAction="always"
         android:orderInCategory="2">
+    </item>
+    <item
+        android:id="@+id/manrajHyobinHelp"
+        android:title="Help"
+        android:icon="@drawable/ic_help"
+        app:showAsAction="never">
     </item>
 </menu>

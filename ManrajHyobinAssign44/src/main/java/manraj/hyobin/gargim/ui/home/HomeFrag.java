@@ -1,3 +1,8 @@
+/*
+        Manraj Garg s991541957
+        Hyobin Im s991526068
+        This is assignment 4 completed via pair programming - displays the use of multiple fragments in a nav drawer */
+
 package manraj.hyobin.gargim.ui.home;
 
 import android.content.SharedPreferences;
@@ -41,7 +46,7 @@ public class HomeFrag extends Fragment {
 
         dateTimeDisplay = view.findViewById(R.id.manrajHyobinDateDisplay);
         calendar = Calendar.getInstance();
-        dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        dateFormat = new SimpleDateFormat(getString(R.string.dateFormat));
         date = dateFormat.format(calendar.getTime());
         dateTimeDisplay.setText(date);
 

@@ -1,3 +1,8 @@
+/*
+        Manraj Garg s991541957
+        Hyobin Im s991526068
+        This is assignment 4 completed via pair programming - displays the use of multiple fragments in a nav drawer */
+
 package manraj.hyobin.gargim.ui.home;
 
 import android.app.ProgressDialog;
@@ -86,17 +91,17 @@ public class DownloadFrag extends Fragment {
             public void onClick(View v) {
                 AsyncTaskExample asyncTask=new AsyncTaskExample();
                 TextView spinnerText = root.findViewById(R.id.gargImTvName);
-                if(spinnerText.getText().toString().equals("Bucks"))
+                if(spinnerText.getText().toString().equals(getString(R.string.buck)))
                 {
-                    asyncTask.execute("https://toppng.com/uploads/preview/milwaukee-bucks-football-logo-png-11536012031kbxllbpway.png");
+                    asyncTask.execute(getString(R.string.bucksUrl));
                 }
-                else if (spinnerText.getText().toString().equals("Raptors"))
+                else if (spinnerText.getText().toString().equals(getString(R.string.rap)))
                 {
-                    asyncTask.execute("https://www.vhv.rs/dpng/d/147-1475850_toronto-raptors-logo-claw-toronto-raptors-logo-png.png");
+                    asyncTask.execute(getString(R.string.raptorsUrl));
                 }
-                else if (spinnerText.getText().toString().equals("Lakers"))
+                else if (spinnerText.getText().toString().equals(getString(R.string.lake)))
                 {
-                    asyncTask.execute("https://toppng.com/uploads/preview/lakers-logo-png-los-angeles-lakers-11562884650hddhrc18oe.png");
+                    asyncTask.execute(getString(R.string.lakersUrl));
                 }
             }
         });
@@ -108,9 +113,9 @@ public class DownloadFrag extends Fragment {
     private void initList()
     {
         mSpinnerList = new ArrayList<>();
-        mSpinnerList.add(new SpinnerItems("Raptors", R.drawable.raptors));
-        mSpinnerList.add(new SpinnerItems("Bucks", R.drawable.bucks));
-        mSpinnerList.add(new SpinnerItems("Lakers", R.drawable.lakers));
+        mSpinnerList.add(new SpinnerItems(getString(R.string.raps), R.drawable.raptors));
+        mSpinnerList.add(new SpinnerItems(getString(R.string.bucs), R.drawable.bucks));
+        mSpinnerList.add(new SpinnerItems(getString(R.string.la), R.drawable.lakers));
     }
 
     private class AsyncTaskExample extends AsyncTask<String, String, Bitmap> {
@@ -121,8 +126,8 @@ public class DownloadFrag extends Fragment {
             String teamText = spinnerText.getText().toString();
             super.onPreExecute();
             p=new ProgressDialog(getContext());
-            p.setTitle("Downloading " + teamText);
-            p.setMessage("Please wait...It is downloading");
+            p.setTitle(getString(R.string.title) + teamText);
+            p.setMessage(getString(R.string.message));
             p.setIndeterminate(false);
             p.setCancelable(false);
             p.show();
